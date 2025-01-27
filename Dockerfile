@@ -1,7 +1,7 @@
-FROM python:3.11-alpine3.20 as builder
+FROM python:3.11-alpine3.19 as builder
 
 # Add the community repo for access to patchelf binary package
-RUN echo 'https://dl-cdn.alpinelinux.org/alpine/v3.20/community/' >> /etc/apk/repositories
+RUN echo 'https://dl-cdn.alpinelinux.org/alpine/v3.19/community/' >> /etc/apk/repositories
 RUN apk --no-cache upgrade && apk --no-cache add build-base tar musl-utils openssl-dev patchelf
 RUN pip install --upgrade pip
 # patchelf-wrapper is necessary now for cx_Freeze, but not for Curator itself.
