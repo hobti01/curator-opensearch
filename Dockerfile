@@ -1,4 +1,4 @@
-FROM python:3.11-alpine3.19 as builder
+FROM python:3.11.9-alpine3.19 as builder
 
 # Add the community repo for access to patchelf binary package
 RUN echo 'https://dl-cdn.alpinelinux.org/alpine/v3.19/community/' >> /etc/apk/repositories
